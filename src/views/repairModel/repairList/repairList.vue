@@ -1,6 +1,16 @@
 <template>
   <div class="repairList">
-    <pageTable :tableConfig="tableConfig" baseUrl="repairList"></pageTable>
+    <pageFrom :formConfig="formConfig" url="repairList"></pageFrom>
+    <tables :tableConfig="tableConfig" baseUrl="/userRepair" :querys="querys">
+      <template #statusAll="scope">
+        <el-tag class="ml-2" :type="scope.datas.status < 1 ? 'danger' : 'success'">{{
+          scope.datas.status > 1 ? '未处理' : '已处理'
+        }}</el-tag>
+      </template>
+      <template #repairoperate>
+        <el-button type="primary" icon="EditPen" size="small">处理</el-button>
+      </template></tables
+    >
   </div>
 </template>
 
@@ -8,8 +18,10 @@
 // defineProps父传子, defineEmits子传父, defineExpose组件中要暴露出去的属性 setup自带
 import { ref, reactive } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import pageTable from '@/components/page-table/pageTable.vue'
-import { tableConfig } from './config/tableConfig'
+import tables from '@/baseUi/table/tables.vue'
+import pageFrom from '@/components/page-from/pageFrom.vue'
+import { tableConfig, querys } from './config/tableConfig'
+import { formConfig } from './config/fromConfig'
 // 路由对象
 const route = useRoute()
 // 路由实例

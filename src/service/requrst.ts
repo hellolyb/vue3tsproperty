@@ -31,7 +31,7 @@ class Reeuest {
       },
       (error) => {
         // 对请求错误做些什么
-        loading.close()
+        // loading.close()
         return Promise.reject(error)
       }
     )

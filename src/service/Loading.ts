@@ -6,7 +6,7 @@ export const loading = {
     if (this.loadingInstance === null) {
       this.loadingInstance = ElLoading.service({
         text: '拼命加载中',
-        background: 'rgba(255, 51, 102, 0.5)'
+        background: 'rgba(74, 35, 90, 0.5)'
       })
     }
   },

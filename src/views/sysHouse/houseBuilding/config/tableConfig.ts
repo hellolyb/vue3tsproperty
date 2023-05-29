@@ -1,6 +1,14 @@
+import { ref } from 'vue'
+export const querys = ref({
+  buildNme: '',
+  unitName: '',
+  currentPage: 1,
+  pageSize: 10,
+  total: 0
+})
 export const tableConfig = {
   tableParame: {
-    height: '460'
+    height: '260'
   },
   propList: [
     {

@@ -27,9 +27,6 @@ store.getUserdata()
 // 路由对象
 const route = useRoute()
 // 路由实例
-const getLogin = async () => {}
-getLogin()
-
 const router = useRouter()
 const data = reactive({})
 // 方法部分
@@ -41,8 +38,7 @@ watchEffect(() => {})
 .main {
   width: 100%;
   height: 100%;
-  .el-header,
-  .el-footer {
+  .el-header {
     background-image: linear-gradient(135deg, #3b2667 10%, #bc78ec 100%);
     color: #fff;
     height: 90px;

@@ -1,6 +1,14 @@
+import { ref } from 'vue'
+export const querys = ref({
+  total: 0,
+  currentPage: 1,
+  pageSize: 10,
+  userName: '',
+  houseNum: ''
+})
 export const tableConfig = {
   tableParame: {
-    height: '260'
+    height: '200'
   },
   propList: [
     {
@@ -36,13 +44,13 @@ export const tableConfig = {
       label: '表显'
     },
     {
-      prop: 'payPowerStatus',
+      prop: 'payWaterStatus',
       label: '缴费状态',
-      slotName: 'payPowerStatus'
+      slotName: 'payWaterStatus'
     },
     {
       label: '操作',
-      width: '480px',
+      width: '200px',
       slotName: 'Wateroperate'
     }
   ]

@@ -2,6 +2,14 @@
   <div class="index">
     <div class="logo">
       <icontog></icontog>
+      <div style="width: 500px; display: flex; justify-content: space-between">
+        <Love></Love>
+        <Love></Love>
+        <Love></Love>
+        <Love></Love>
+        <Love></Love>
+        <Love></Love>
+      </div>
       <dropdown></dropdown>
     </div>
     <div class="routerTitle"></div>
@@ -14,6 +22,7 @@ import { ref, reactive } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import icontog from './icontog.vue'
 import dropdown from './dropdown.vue'
+import Love from './Love.vue'
 // 路由对象
 const route = useRoute()
 // 路由实例

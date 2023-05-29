@@ -3,6 +3,7 @@ export const tableConfig = {
     height: '460',
     'row-key': 'menuId'
   },
+  showPagination: true,
   propList: [
     {
       prop: 'menuLabel',

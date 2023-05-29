@@ -1,3 +1,11 @@
+import { ref } from 'vue'
+export const querys = ref({
+  loginName: '',
+  phone: '',
+  currentPage: 1,
+  pageSize: 1,
+  total: 0
+})
 export const tableConfig = {
   tableParame: {
     height: '360'
@@ -11,10 +19,6 @@ export const tableConfig = {
       prop: 'sex',
       label: '性别',
       slotName: 'sex'
-    },
-    {
-      prop: 'parkType',
-      label: '使用状态'
     },
     {
       prop: 'phone',
@@ -42,7 +46,7 @@ export const tableConfig = {
     },
     {
       prop: 'status',
-      label: '是否禁用',
+      label: '是否启用',
       slotName: 'todisable'
     },
     {

@@ -1,6 +1,25 @@
 <template>
   <div class="feePark">
-    <pageTable :tableConfig="tableConfig" baseUrl="feePark"></pageTable>
+    <pageFrom :formConfig="formConfig"></pageFrom>
+    <tables :tableConfig="tableConfig" baseUrl="/feePark" :querys="querys">
+      <template #parkType="scope">
+        <el-tag class="ml-2" :type="scope.datas.parkType < 1 ? 'danger' : 'success'">{{
+          scope.datas.parkType < 1 ? '地上' : '地下'
+        }}</el-tag>
+      </template>
+      <template #payParkStatus="scope">
+        <el-tag class="ml-2" :type="scope.datas.payParkStatus < 1 ? 'danger' : 'success'">{{
+          scope.datas.payParkStatus > 1 ? '未缴费' : '已缴费'
+        }}</el-tag>
+      </template>
+      <template #Parkoperate="scope">
+        <el-button type="primary" icon="EditPen" size="small">编辑</el-button>
+        <el-button type="danger" icon="Delete" size="small">删除</el-button>
+        <el-button type="warning" size="small" icon="Money" v-if="scope.datas.payParkStatus != 1"
+          >缴费</el-button
+        >
+      </template></tables
+    >
   </div>
 </template>
 
@@ -8,8 +27,10 @@
 // defineProps父传子, defineEmits子传父, defineExpose组件中要暴露出去的属性 setup自带
 import { ref, reactive } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import pageTable from '@/components/page-table/pageTable.vue'
-import { tableConfig } from './config/tableConfig'
+import tables from '@/baseUi/table/tables.vue'
+import pageFrom from '@/components/page-from/pageFrom.vue'
+import { tableConfig, querys } from './config/tableConfig'
+import { formConfig } from './config/fromConfig'
 // 路由对象
 const route = useRoute()
 // 路由实例
